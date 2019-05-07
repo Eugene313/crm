@@ -2,6 +2,7 @@
   #app
     .container
       router-view
+      router-link(to='/login') Перейти к Foo
 </template>
 
 <script>

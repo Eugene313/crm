@@ -1,37 +1,22 @@
-<template>
-  <div id="user_login">
-    <form id="regForm" 
-          v-on:submit.prevent="onSubmit">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Login</label>
+<template lang="pug">
+  #user_login
+    form#regForm(v-on:submit.prevent='onSubmit')
+      .form-group
+        label(for='exampleInputEmail1') Login
+        input#exampleInputEmail1.form-control(type='text', 
+                                              aria-describedby='emailHelp', 
+                                              placeholder='Enter login', 
+                                              v-model='login')
+        small#emailHelp.form-text.text-muted
+      .form-group
+        label(for='exampleInputPassword1') Password
+        input#exampleInputPassword1.form-control(type='password', 
+                                                 placeholder='Password', 
+                                                 v-model='password')
+      button.btn.btn-primary.disabled(type='submit') Submit
 
-        <input  type="text" 
-                class="form-control" 
-                id="exampleInputEmail1" 
-                aria-describedby="emailHelp" 
-                placeholder="Enter login" 
-                v-model="login">
-
-        <small  id="emailHelp" 
-                class="form-text text-muted">
-                </small>
-      </div>
-
-      <div class="form-group">
-        <label  for="exampleInputPassword1">Password</label>
-        
-        <input  type="password" 
-                class="form-control" 
-                id="exampleInputPassword1" 
-                placeholder="Password" 
-                v-model="password">
-      </div>
-
-      <button type="submit" 
-              class="btn btn-primary disabled">Submit</button>
-    </form>
-  </div>
 </template>
+
 <script>
 export default {
   data(){

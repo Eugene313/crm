@@ -21,6 +21,7 @@ Vue.component('User-Login', UserLogin);
 Vue.component('Dashboard', Dashboard);
 
 const router = new VueRouter({
+  mode:'history',
   routes : [
     {
       path : '/login',

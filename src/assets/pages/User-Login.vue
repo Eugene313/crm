@@ -12,7 +12,8 @@
         input#password.form-control(type='password', 
                                     placeholder='Password', 
                                     v-model='password')
-      button.btn.btn-primary.disabled(type='submit') Submit
+      button.btn.btn-primary(type='submit'
+                             :disabled="true") Submit
 
 </template>
 
@@ -54,6 +55,8 @@ export default {
       border-radius: 8px
       padding: 20px;
       min-width: 320px
+      .btn-primary
+        width: 100%
 </style>
 
 

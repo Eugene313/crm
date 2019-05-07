@@ -20546,6 +20546,7 @@ exports.EVENT_FILTER = EVENT_FILTER;
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data() {
@@ -29213,7 +29214,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_User_Login_vue__ = __webpack_require__(71);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_52105bfe_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_User_Login_vue__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_531f9305_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_User_Login_vue__ = __webpack_require__(150);
 function injectStyle (ssrContext) {
   __webpack_require__(148)
 }
@@ -29228,12 +29229,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-52105bfe"
+var __vue_scopeId__ = "data-v-531f9305"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_User_Login_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_52105bfe_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_User_Login_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_531f9305_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_template_compiler_preprocessor_engine_pug_node_modules_vue_loader_lib_selector_type_template_index_0_User_Login_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -29254,7 +29255,7 @@ var content = __webpack_require__(149);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(23)("92d6919c", content, true, {});
+var update = __webpack_require__(23)("0ac2fffc", content, true, {});
 
 /***/ }),
 /* 149 */
@@ -29265,7 +29266,7 @@ exports = module.exports = __webpack_require__(22)(false);
 
 
 // module
-exports.push([module.i, "#user_login[data-v-52105bfe]{width:100%;height:100vh;display:flex;justify-content:center;align-items:center}#user_login #regForm[data-v-52105bfe]{border:1px solid #e2e2e2;border-radius:8px;padding:20px;min-width:320px}", ""]);
+exports.push([module.i, "#user_login[data-v-531f9305]{width:100%;height:100vh;display:flex;justify-content:center;align-items:center}#user_login #regForm[data-v-531f9305]{border:1px solid #e2e2e2;border-radius:8px;padding:20px;min-width:320px}#user_login #regForm .btn-primary[data-v-531f9305]{width:100%}", ""]);
 
 // exports
 
@@ -29275,7 +29276,7 @@ exports.push([module.i, "#user_login[data-v-52105bfe]{width:100%;height:100vh;di
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"user_login"}},[_c('form',{attrs:{"id":"regForm"},on:{"submit":function($event){$event.preventDefault();return _vm.onSubmit($event)}}},[_c('div',{staticClass:"form-group"},[_c('label',{attrs:{"for":"login"}},[_vm._v("Login")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.login),expression:"login"}],staticClass:"form-control",attrs:{"id":"login","type":"text","aria-describedby":"emailHelp","placeholder":"Enter login"},domProps:{"value":(_vm.login)},on:{"input":function($event){if($event.target.composing){ return; }_vm.login=$event.target.value}}})]),_c('div',{staticClass:"form-group"},[_c('label',{attrs:{"for":"password"}},[_vm._v("Password")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.password),expression:"password"}],staticClass:"form-control",attrs:{"id":"password","type":"password","placeholder":"Password"},domProps:{"value":(_vm.password)},on:{"input":function($event){if($event.target.composing){ return; }_vm.password=$event.target.value}}})]),_c('button',{staticClass:"btn btn-primary disabled",attrs:{"type":"submit"}},[_vm._v("Submit")])])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"user_login"}},[_c('form',{attrs:{"id":"regForm"},on:{"submit":function($event){$event.preventDefault();return _vm.onSubmit($event)}}},[_c('div',{staticClass:"form-group"},[_c('label',{attrs:{"for":"login"}},[_vm._v("Login")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.login),expression:"login"}],staticClass:"form-control",attrs:{"id":"login","type":"text","aria-describedby":"emailHelp","placeholder":"Enter login"},domProps:{"value":(_vm.login)},on:{"input":function($event){if($event.target.composing){ return; }_vm.login=$event.target.value}}})]),_c('div',{staticClass:"form-group"},[_c('label',{attrs:{"for":"password"}},[_vm._v("Password")]),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.password),expression:"password"}],staticClass:"form-control",attrs:{"id":"password","type":"password","placeholder":"Password"},domProps:{"value":(_vm.password)},on:{"input":function($event){if($event.target.composing){ return; }_vm.password=$event.target.value}}})]),_c('button',{staticClass:"btn btn-primary",attrs:{"type":"submit","disabled":true}},[_vm._v("Submit")])])])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

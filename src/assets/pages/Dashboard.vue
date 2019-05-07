@@ -1,5 +1,6 @@
-<template>
-  <h1>Dashboard</h1>
+<template lang="pug">
+  h1 Dashboard
+  
 </template>
 <script>
 export default {

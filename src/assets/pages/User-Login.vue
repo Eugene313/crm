@@ -2,17 +2,16 @@
   #user_login
     form#regForm(v-on:submit.prevent='onSubmit')
       .form-group
-        label(for='exampleInputEmail1') Login
-        input#exampleInputEmail1.form-control(type='text', 
-                                              aria-describedby='emailHelp', 
-                                              placeholder='Enter login', 
-                                              v-model='login')
-        small#emailHelp.form-text.text-muted
+        label(for='login') Login
+        input#login.form-control(type='text', 
+                                 aria-describedby='emailHelp', 
+                                 placeholder='Enter login', 
+                                 v-model='login')
       .form-group
-        label(for='exampleInputPassword1') Password
-        input#exampleInputPassword1.form-control(type='password', 
-                                                 placeholder='Password', 
-                                                 v-model='password')
+        label(for='password') Password
+        input#password.form-control(type='password', 
+                                    placeholder='Password', 
+                                    v-model='password')
       button.btn.btn-primary.disabled(type='submit') Submit
 
 </template>
@@ -29,7 +28,6 @@ export default {
   },
   methods : {
     onSubmit(){
-      console.log('111');
       this.axios.post(this.url , {
         login : this.login,
         password : this.password,
@@ -39,9 +37,6 @@ export default {
         console.log(response);
       })
       .catch(function (error) {
-        if(error){
-          console.log(error.status);
-        }
       });
     }
   }

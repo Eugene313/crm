@@ -1,8 +1,8 @@
 <template lang="pug">
   #app
-    .container
-      router-view
-      router-link(to='/login') Перейти к Foo
+    Navbar
+    panel
+    router-view
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
 }
@@ -18,5 +18,8 @@ export default {
 
 <style lang="sass">
 #app
+  display: flex
+  background: #bfbfbf
   width: 100%
+  height: 100vh
 </style>

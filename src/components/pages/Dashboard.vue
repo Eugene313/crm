@@ -1,9 +1,12 @@
 <template lang="pug">
-  h1 Dashboard
+  #dashboard
 </template>
 <script>
 export default {
-  
+  data(){
+    return {
+    }
+  }
 }
 </script>
 <style lang="sass" scoped>

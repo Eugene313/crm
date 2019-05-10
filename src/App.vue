@@ -4,6 +4,7 @@
       <drawer></drawer>
       <v-content>
         <v-container fluid>
+          <p>asdasd {{ theme }}</p>
           <router-view></router-view>
         </v-container>
       </v-content>

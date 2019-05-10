@@ -54,7 +54,7 @@
             </v-btn>
             <v-spacer></v-spacer>
             <v-btn flat>
-                <v-switch color="#e25e00" @change="changeTheme">
+                <v-switch @change="changeTheme" color="#e25e00" >
                 </v-switch>
             </v-btn>
             <v-btn flat to="/login" >
@@ -85,8 +85,6 @@
             changeTheme(){
                 this.$store.commit('changeTheme')
             }
-
-
         },
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
         <v-container fluid fill-height class="login">
         <v-layout align-center justify-center>
-          <v-flex xs12 sm6 md5>
+          <v-flex xs3 sm2 md5>
             <v-card class="elevation-12">
               <v-toolbar dark color="#e25e00">
                 <v-toolbar-title>Login form</v-toolbar-title>

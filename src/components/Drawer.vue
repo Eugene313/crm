@@ -75,7 +75,7 @@
             return {
                 tile: true,
                 avatarSize: 40,
-                drawer: true
+                drawer: false
             }
         },
         methods: {

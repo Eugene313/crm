@@ -7,13 +7,13 @@
                 <v-list flat>
                     <v-list-tile>
                         <v-avatar :size="avatarSize" :tile="tile"><img class="logo" src="../assets/img/logo.png" alt=""></v-avatar>
-                        <v-list-tile-title style="padding: 0 10px;font-size:18px;font-weight: bold;">Quntum Projects</v-list-tile-title>
+                        <v-list-tile-title style="padding: 0 10px;font-size:18px;font-weight: bold;">Quantum Projects</v-list-tile-title>
                     </v-list-tile>
                 </v-list>
             </v-toolbar>
             <v-divider></v-divider>
             <v-list dense class="pt-0">
-                <v-list-tile>
+                <v-list-tile to="/Users">
                     <v-list-tile-action>
                         <v-icon>supervised_user_circle</v-icon>
                     </v-list-tile-action>
@@ -22,7 +22,7 @@
                         <v-list-tile-title>Manage Users</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile>
+                <v-list-tile to="/Search">
                     <v-list-tile-action>
                         <v-icon>search</v-icon>
                     </v-list-tile-action>
@@ -31,7 +31,7 @@
                         <v-list-tile-title>Search</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile>
+                <v-list-tile to="/account">
                     <v-list-tile-action>
                         <v-icon>sms</v-icon>
                     </v-list-tile-action>
@@ -53,10 +53,9 @@
                 Dashboard
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn>
-                <v-switch v-model="theme">
+            <v-btn flat>
+                <v-switch color="#e25e00" @change="changeTheme">
                 </v-switch>
-
             </v-btn>
             <v-btn flat to="/login" >
                 <v-icon left>keyboard_tab</v-icon>
@@ -83,12 +82,12 @@
             drawerFun() {
                 this.drawer = !this.drawer;
             },
-        },
-        computed : {
-            theme(){
-                return this.$store.commit('changeTheme')
+            changeTheme(){
+                this.$store.commit('changeTheme')
             }
-        }
+
+
+        },
     }
 </script>
 

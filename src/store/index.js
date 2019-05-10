@@ -5,11 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    theme : true
+    theme : false
   },
   mutations: {
     changeTheme(state){
-      return state.theme;
+      state.theme = !state.theme;
     }
 
   },

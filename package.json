@@ -1,44 +1,54 @@
 {
-  "name": "crm",
-  "description": "A Vue.js project",
-  "version": "1.0.0",
-  "author": "EUGENE <RUBEL.EUGENE@GMAIL.COM>",
-  "license": "MIT",
+  "name": "crmv2",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vue/cli-service-global": "^3.7.0",
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "material-design-icons-iconfont": "^5.0.1",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-vuetify": "^0.5.0",
+    "vue-template-compiler": "^2.5.21",
+    "vuetify": "^1.5.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "devDependencies": {
-    "axios": "^0.18.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-3": "^6.24.1",
-    "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.19",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.7",
-    "file-loader": "^1.1.4",
-    "node-sass": "^4.5.3",
-    "pug": "^2.0.3",
-    "pug-loader": "^2.4.0",
-    "sass-loader": "^6.0.6",
-    "vue": "^2.6.10",
-    "vue-axios": "^2.1.4",
-    "vue-loader": "^13.0.5",
-    "vue-router": "^3.0.6",
-    "vue-template-compiler": "^2.4.4",
-    "vuejs-jwt": "^1.1.0",
-    "vuelidate": "^0.7.4",
-    "vuex": "^3.1.0",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
-  }
+    "last 2 versions"
+  ]
 }

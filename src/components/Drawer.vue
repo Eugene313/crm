@@ -54,8 +54,9 @@
             </v-btn>
             <v-spacer></v-spacer>
             <v-btn flat>
-                <v-switch @change="changeTheme" color="#e25e00" >
+                <v-switch @change="changeTheme" color="#e25e00">
                 </v-switch>
+                <p></p>
             </v-btn>
             <v-btn flat to="/login" >
                 <v-icon left>keyboard_tab</v-icon>

@@ -3,7 +3,7 @@
     <v-app :dark="theme">
       <drawer></drawer>
       <v-content>
-        <v-container fluid>
+        <v-container fluid>{{ theme }}
           <router-view></router-view>
         </v-container>
       </v-content>

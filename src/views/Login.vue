@@ -86,7 +86,7 @@
                   console.log(error.Error)
                 })
               }
-            }
+            },
         },
         computed : {
           login : {

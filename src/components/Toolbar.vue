@@ -62,7 +62,7 @@
                 <v-icon left>keyboard_tab</v-icon>
                 Login
             </v-btn>
-            <v-btn flat>
+            <v-btn flat @click="removeToken">
                 <v-icon left>keyboard_return</v-icon>
                 Logout
             </v-btn>
@@ -84,6 +84,10 @@
             drawerFun() {
                 this.drawer = !this.drawer;
             },
+            removeToken(){
+              localStorage.removeItem('error')
+              this.$router.push('home')
+            }
         },
         computed : {
             theme : {

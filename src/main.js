@@ -9,9 +9,9 @@ import VueAxios from 'vue-axios'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-import Drawer from './components/Drawer'
+import Toolbar from './components/Toolbar'
 
-Vue.component('Drawer',Drawer);
+Vue.component('Toolbar',Toolbar);
 
 Vue.use(Vuetify);
 Vue.use(VueAxios, axios);

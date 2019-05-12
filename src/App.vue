@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app :dark="theme">
-      <drawer></drawer>
+      <Toolbar></Toolbar>
       <v-content>
         <v-container fluid>{{ theme }}
           <router-view></router-view>

@@ -3,7 +3,7 @@
     <v-app :dark="theme">
       <Toolbar></Toolbar>
       <v-content>
-        <v-container fluid>{{ theme }}
+        <v-container>
           <router-view></router-view>
         </v-container>
       </v-content>
@@ -17,7 +17,6 @@
   export default {
     data(){
       return {
-        drawer : true,
         avatarSize : 40,
         tile: true,
       }

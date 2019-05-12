@@ -1,9 +1,10 @@
 <template>
-        <v-container fluid fill-height class="login">
+        <v-container fluid fill-height style="height: 80vh">
+        <v-alert dismissible type="error" :value="error" class="error_auth">Authorization failed status code {{  }}</v-alert>
         <v-layout align-center justify-center>
           <v-flex xs12 sm5 md5 lg4 xl3>
             <v-card class="elevation-12">
-              <v-toolbar dark color="#e25e00">
+              <v-toolbar>
                 <v-toolbar-title>Login form</v-toolbar-title>
               </v-toolbar>
               <v-card-text>
@@ -29,7 +30,18 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn :disabled="!valid" @click="onSubmit" color="#e25e00">Login</v-btn>
+                <v-btn  :disabled="!valid" 
+                        @click="onSubmit"
+                        >
+                        Login
+                </v-btn>
+                <div class="spinner" v-show="spinner">
+                 <v-progress-circular
+                    indeterminate
+                    :value="100"
+                    color="blue-grey"
+                  ></v-progress-circular>
+                </div>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -47,22 +59,31 @@
             ],
             passwordRules : [
               v => !!v || 'Password is required'
-            ]
+            ],
+            error : false,
+            spinner : false,
+            statusCode : ''
           }
         },
         methods : {
           onSubmit(){
             if (this.$refs.form.validate()){
+                this.spinner = true
                 this.axios.post(this.url , {
                   login : this.login,
                   password : this.password,
                   projectId : this.projectId
                 })
-                .then((response)=> {
-                  console.log( this.login)
+                .then(function( response ){
+                  this.spinner = false
+
                 })
-                .catch((error)=>{
-                  console.log(error)
+                .catch( error => {
+                  localStorage.setItem('error',error);
+                  this.spinner = false
+                  this.statusCode = error
+                  this.error = true
+                  console.log(error.Error)
                 })
               }
             }
@@ -93,7 +114,23 @@
         }
     }
 </script>
-
-<style scoped lang="sass">
-
+<style lang="sass">
+  .login
+    height: 100vh
+  .error_auth
+    position: absolute !important
+    top: 0
+    left: 0
+    right: 0
+  .spinner
+    display: flex
+    justify-content: center
+    align-items: center
+    background: #ffffff80
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 9999999
 </style>

@@ -15,9 +15,7 @@ Vue.component('Toolbar',Toolbar);
 
 Vue.use(Vuetify);
 Vue.use(VueAxios, axios);
-Vue.use(Vuetify, {
-  iconfont: 'md'
-});
+
 
 Vue.config.productionTip = false;
 

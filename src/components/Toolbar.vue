@@ -54,11 +54,11 @@
             </v-btn>
             <v-spacer></v-spacer>
             <v-btn flat>
-                <v-switch v-model="theme" color="#e25e00">
+                <v-switch v-model="theme">
                 </v-switch>
                 <p></p>
             </v-btn>
-            <v-btn flat to="/login" >
+            <v-btn flat to="/login">
                 <v-icon left>keyboard_tab</v-icon>
                 Login
             </v-btn>
@@ -76,7 +76,8 @@
             return {
                 tile: true,
                 avatarSize: 40,
-                drawer: false
+                drawer: false,
+                localStorage : ''
             }
         },
         methods: {
@@ -92,7 +93,7 @@
                 set(value){
                     this.$store.commit('changeTheme', value);
                 }
-            }
+            },
         },
     }
 </script>

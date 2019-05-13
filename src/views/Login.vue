@@ -1,6 +1,12 @@
 <template>
         <v-container fluid fill-height style="height: 80vh">
-        <v-alert dismissible type="error" :value="error" class="error_auth">Authorization failed status code {{  }}</v-alert>
+        <v-alert
+                type="error"
+                :value="error"
+                v-show="error"
+                class="error_auth">
+            Authorization failed</v-alert>
+
         <v-layout align-center justify-center>
           <v-flex xs12 sm5 md5 lg4 xl3>
             <v-card class="elevation-12">
@@ -8,41 +14,44 @@
                 <v-toolbar-title>Login form</v-toolbar-title>
               </v-toolbar>
               <v-card-text>
-                <v-form v-model="valid" ref="form" validation>
-                  <v-text-field v-model="login" 
-                                prepend-icon="person" 
-                                name="login" 
-                                label="Login" 
-                                type="text"
-                                :rules="loginRules"
-                                >
+                <v-form v-model="valid"  ref="form" validation @submit.prevent="onSubmit">
+                  <v-text-field
+                   v-model="login"
+                   prepend-icon="person"
+                   name="login"
+                   label="Login"
+                   type="text"
+                   :rules="loginRules"
+                  >
                   </v-text-field>
-                  <v-text-field v-model="password" 
-                                id="password" 
-                                prepend-icon="lock" 
-                                name="password" 
-                                label="Password" 
-                                type="password"
-                                :rules="passwordRules"
-                                >
+                  <v-text-field
+                          v-model="password"
+                          id="password"
+                          prepend-icon="lock"
+                          name="password"
+                          label="Password"
+                          type="password"
+                          :rules="passwordRules">
                   </v-text-field>
-                </v-form>
-              </v-card-text>
+
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn  :disabled="!valid" 
-                        @click="onSubmit"
+                <v-btn  :disabled="!valid"
+                        type="submit"
                         >
                         Login
                 </v-btn>
-                <div class="spinner" v-show="spinner">
+                <div class="spinner"
+                     v-show="spinner">
                  <v-progress-circular
                     indeterminate
                     :value="100"
-                    color="blue-grey"
-                  ></v-progress-circular>
+                    color="blue-grey">
+                 </v-progress-circular>
                 </div>
               </v-card-actions>
+                </v-form>
+              </v-card-text>
             </v-card>
           </v-flex>
         </v-layout>
@@ -62,7 +71,6 @@
             ],
             error : false,
             spinner : false,
-            statusCode : ''
           }
         },
         methods : {
@@ -74,16 +82,15 @@
                   password : this.password,
                   projectId : this.projectId
                 })
-                .then(function( response ){
+                .then(response => {
                   this.spinner = false
-
+                  localStorage.setItem('access_token',response.data.token);
+                  this.$router.push('/dashboard')
+                  document.location.reload(true)
                 })
                 .catch( error => {
-                  localStorage.setItem('error',error);
                   this.spinner = false
-                  this.statusCode = error
                   this.error = true
-                  console.log(error.Error)
                 })
               }
             },
@@ -126,7 +133,7 @@
     display: flex
     justify-content: center
     align-items: center
-    background: #ffffff80
+    background: #00000080
     position: absolute
     top: 0
     left: 0

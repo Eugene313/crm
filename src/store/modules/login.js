@@ -11,6 +11,10 @@ export default {
         },
         passwordForm(state,value){
           state.password = value;
-        }
-      }
+        },
+        onSubmit () {
+
+         }
+      },
+
 }

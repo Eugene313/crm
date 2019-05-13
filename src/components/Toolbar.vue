@@ -2,11 +2,15 @@
     <div id="drawer">
         <v-navigation-drawer
                 app
-                v-model="drawer">
+                :value="drawer"
+                v-if="userToken">
             <v-toolbar>
-                <v-list flat>
+                <v-list>
                     <v-list-tile>
-                        <v-avatar :size="avatarSize" :tile="tile"><img class="logo" src="../assets/img/logo.png" alt=""></v-avatar>
+                        <v-avatar
+                                size="40"
+                                tile="0">
+                            <img class="logo" src="../assets/img/logo.png" alt=""></v-avatar>
                         <v-list-tile-title style="padding: 0 10px;font-size:18px;font-weight: bold;">Quantum Projects</v-list-tile-title>
                     </v-list-tile>
                 </v-list>
@@ -43,12 +47,8 @@
             </v-list>
         </v-navigation-drawer>
         <v-toolbar app>
-            <v-toolbar-side-icon @click="drawerFun"></v-toolbar-side-icon>
-            <v-btn flat to="./home">
-                <v-icon left>home</v-icon>
-                Home
-            </v-btn>
-            <v-btn flat to="./dashboard">
+            <v-toolbar-side-icon @click="toggleDrawer"></v-toolbar-side-icon>
+            <v-btn flat to="./dashboard" v-if="userToken">
                 <v-icon left>dashboard</v-icon>
                 Dashboard
             </v-btn>
@@ -58,11 +58,9 @@
                 </v-switch>
                 <p></p>
             </v-btn>
-            <v-btn flat to="/login">
-                <v-icon left>keyboard_tab</v-icon>
-                Login
-            </v-btn>
-            <v-btn flat @click="removeToken">
+            <v-btn flat
+                   @click="removeToken"
+                   v-if="userToken">
                 <v-icon left>keyboard_return</v-icon>
                 Logout
             </v-btn>
@@ -72,36 +70,29 @@
 
 <script>
     export default {
-        data() {
-            return {
-                tile: true,
-                avatarSize: 40,
-                drawer: false,
-                localStorage : ''
-            }
-        },
         methods: {
-            drawerFun() {
-                this.drawer = !this.drawer;
-            },
             removeToken(){
-              localStorage.removeItem('error')
-              this.$router.push('home')
+                this.$store.commit('removeToken');
+            },
+            toggleDrawer(){
+                this.$store.commit('toggleDrawer');
             }
         },
         computed : {
             theme : {
-                get(){
+                get () {
                     return this.$store.state.toolbar.theme;
                 },
-                set(value){
+                set (value) {
                     this.$store.commit('changeTheme', value);
                 }
             },
+            userToken () {
+                return this.$store.state.user.token;
+            },
+            drawer () {
+                return this.$store.state.toolbar.drawer;
+            }
         },
     }
 </script>
-
-<style scoped>
-
-</style>

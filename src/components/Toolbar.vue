@@ -1,6 +1,6 @@
 <template>
     <div id="drawer">
-        <v-navigation-drawer
+        <v-navigation-drawer color="blue-grey"
                 app
                 :value="drawer"
                 v-if="userToken">

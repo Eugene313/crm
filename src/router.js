@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Login from './views/Login'
 import Dashboard from './views/Dashboard'
 import notfound from './views/Notfound'
@@ -36,11 +37,11 @@ const router = new Router({
       component: Users,
       name : 'users'
     },
-      {
-          path : '/dashboard',
-          component: Dashboard,
-          name : 'dashboard'
-      },
+    {
+      path : '/dashboard',
+      component: Dashboard,
+      name : 'dashboard'
+    },
     {
       path : '/*',
       component : notfound

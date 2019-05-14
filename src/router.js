@@ -1,9 +1,10 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Login from './views/Login'
-import Dashboard from './views/Dashboard'
-import notfound from './views/Notfound'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Login from './views/Login';
+import Dashboard from './views/Dashboard';
+import notfound from './views/Notfound';
 import Users from "./views/Users";
+import store from './store'
 
 
 Vue.use(Router);
@@ -49,11 +50,11 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-    console.log('Route start');
   if (to.path !== '/login') {
     if(localStorage.getItem('access_token')){
-      next()
+      next();
     } else {
+      store.commit('removeToken');
       next({ path: '/login' });
     }
   }

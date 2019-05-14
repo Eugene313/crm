@@ -1,6 +1,6 @@
 export default {
     state: {
-        theme : false,
+        theme : true,
       },
     mutations: {
         changeTheme (state) {

@@ -4,8 +4,13 @@
           <v-flex xs12 sm5 md5 lg4 xl3>
             <v-card class="elevation-12">
               <v-toolbar>
+                <v-avatar
+                        size="40"
+                        tile="tile">
+                  <img class="logo" src="../assets/img/logo.png" alt="">
+                </v-avatar>
                 <v-toolbar-title>
-                  Login form
+                  <span style="color:#de573f;font-weight:bold;">Quantum</span> Projects
                 </v-toolbar-title>
               </v-toolbar>
               <v-card-text>
@@ -48,7 +53,7 @@
           <v-snackbar
            v-model="snackbar"
            color="error"
-           :timeout="7000">
+           :timeout="3000">
            Wrong login or password!
            <v-btn
             flat
@@ -96,14 +101,6 @@
               this.$store.commit('passwordForm', value);
             }
           },
-          loading : {
-            get () {
-              return this.$store.getters.computedLoading;
-            },
-            set (value) {
-              this.$store.commit('onLoading',value);
-            }
-          },
           snackbar : {
             get () {
               return this.$store.getters.computedSnackbar;
@@ -111,7 +108,10 @@
             set (value) {
               this.$store.commit('onSnackbar', value);
             }
-          }
+          },
+          loading () {
+            return this.$store.getters.computedLoading
+          },
         }
     }
 </script>

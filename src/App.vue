@@ -7,6 +7,10 @@
           <router-view></router-view>
         </v-container>
       </v-content>
+      <v-footer class="pa-3" app>
+        <v-spacer></v-spacer>
+        <div>Quantum projects &copy; {{ new Date().getFullYear() }}</div>
+      </v-footer>
     </v-app>
   </div>
 </template>
@@ -16,6 +20,9 @@
       theme(){
         return this.$store.state.toolbar.theme;
       }
+    },
+    beforeCreate() {
+      this.$store.commit('jwtDecode')
     }
   }
 </script>

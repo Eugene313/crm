@@ -10,14 +10,24 @@
                         <v-avatar
                                 size="40"
                                 tile="tile">
-                            <img class="logo" src="../assets/img/logo.png" alt=""></v-avatar>
+                            <img class="logo" src="../assets/img/logo.png" alt="">
+                        </v-avatar>
                         <v-list-tile-title style="padding: 0 10px;font-size:18px;font-weight: bold;">Quantum Projects</v-list-tile-title>
                     </v-list-tile>
                 </v-list>
             </v-toolbar>
             <v-divider></v-divider>
-            <v-list dense class="pt-0">
-                <v-list-tile to="/Users">
+            <v-list dense class="pt-0 active-class">
+              <v-list-tile class="pb-3 pt-3 role">
+                <v-list-tile-action>
+                  <v-icon color="green">verified_user</v-icon>
+                </v-list-tile-action>
+
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ currentUser }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+              <v-list-tile to="/Users">
                     <v-list-tile-action>
                         <v-icon>supervised_user_circle</v-icon>
                     </v-list-tile-action>
@@ -97,6 +107,13 @@
             token () {
                 return this.$store.getters.computedToken;
             },
+            currentUser () {
+              return this.$store.getters.getCurrentUser
+            }
         },
     }
 </script>
+<style lang="sass" scoped>
+  .role
+    background: #6b6b6b6b
+</style>

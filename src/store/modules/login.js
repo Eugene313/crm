@@ -26,19 +26,20 @@ export default {
     },
     actions : {
       userLogin ({state, commit}) {
-        commit('onLoading');
+        commit('onLoading',true);
         axios.post(state.url, {
           login : state.login,
           password : state.password,
           projectId : state.projectId,
         })
           .then(response => {
+            commit('onLoading',false);
             localStorage.setItem('access_token',response.data.token);
             commit('addToken',localStorage.getItem('access_token'));
-            router.push('/dashboard')
+            router.push('/dashboard');
           })
           .catch(() => {
-            commit('onLoading');
+            commit('onLoading', false);
             commit('onSnackbar',true);
           });
       }

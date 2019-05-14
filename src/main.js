@@ -10,19 +10,12 @@ import VueJWT from 'vuejs-jwt'
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import colors from 'vuetify/es5/util/colors'
 
 import Toolbar from './components/Toolbar'
 
 Vue.component('Toolbar',Toolbar);
 
-Vue.use(Vuetify, {
-    theme: {
-        primary: colors.lime.lime, // #E53935
-        secondary: colors.lime.lime, // #FFCDD2
-        accent: colors.lime.lime// #3F51B5
-    }
-});
+Vue.use(Vuetify);
 Vue.use(VueAxios, axios);
 Vue.use(VueJWT)
 

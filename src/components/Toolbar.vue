@@ -3,13 +3,13 @@
         <v-navigation-drawer color="blue-grey"
                 app
                 :value="drawer"
-                v-if="userToken">
+                v-if="token">
             <v-toolbar>
                 <v-list>
                     <v-list-tile>
                         <v-avatar
                                 size="40"
-                                tile="0">
+                                tile="tile">
                             <img class="logo" src="../assets/img/logo.png" alt=""></v-avatar>
                         <v-list-tile-title style="padding: 0 10px;font-size:18px;font-weight: bold;">Quantum Projects</v-list-tile-title>
                     </v-list-tile>
@@ -48,7 +48,7 @@
         </v-navigation-drawer>
         <v-toolbar app>
             <v-toolbar-side-icon @click="toggleDrawer"></v-toolbar-side-icon>
-            <v-btn flat to="./dashboard" v-if="userToken">
+            <v-btn flat to="./dashboard" v-if="token">
                 <v-icon left>dashboard</v-icon>
                 Dashboard
             </v-btn>
@@ -60,7 +60,7 @@
             </v-btn>
             <v-btn flat
                    @click="removeToken"
-                   v-if="userToken">
+                   v-if="token">
                 <v-icon left>keyboard_return</v-icon>
                 Logout
             </v-btn>
@@ -70,13 +70,20 @@
 
 <script>
     export default {
-        methods: {
-            removeToken(){
-                this.$store.commit('removeToken');
-            },
-            toggleDrawer(){
-                this.$store.commit('toggleDrawer');
+        data () {
+            return {
+                tile : false,
+                drawer : true
             }
+        },
+        methods: {
+            removeToken () {
+                this.$store.commit('removeToken');
+                this.$router.push('/login')
+            },
+            toggleDrawer () {
+                this.drawer = !this.drawer;
+            },
         },
         computed : {
             theme : {
@@ -87,12 +94,9 @@
                     this.$store.commit('changeTheme', value);
                 }
             },
-            userToken () {
-                return this.$store.state.user.token;
+            token () {
+                return this.$store.getters.computedToken;
             },
-            drawer () {
-                return this.$store.state.toolbar.drawer;
-            }
         },
     }
 </script>

@@ -4,10 +4,18 @@ export default {
     currentUser : null
   },
   mutations : {
-    removeToken () {
+    removeToken (state) {
       localStorage.removeItem('access_token');
-      location.reload()
+      state.token = null;
+    },
+    addToken (state, payload) {
+      state.token = payload;
     }
   },
+  getters : {
+    computedToken (state) {
+      return state.token;
+    }
+  }
 
 }

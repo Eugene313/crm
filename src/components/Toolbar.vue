@@ -20,11 +20,11 @@
             <v-list dense class="pt-0 active-class">
               <v-list-tile class="pb-3 pt-3 role">
                 <v-list-tile-action>
-                  <v-icon color="green">verified_user</v-icon>
+                  <v-icon >verified_user</v-icon>
                 </v-list-tile-action>
 
                 <v-list-tile-content>
-                  <v-list-tile-title>{{ currentUser }}</v-list-tile-title>
+                  <v-list-tile-title>{{ currentUser.role }}</v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
               <v-list-tile to="/Users">
@@ -45,13 +45,13 @@
                         <v-list-tile-title>Search</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile to="/account">
+                <v-list-tile to="/Mailing">
                     <v-list-tile-action>
-                        <v-icon>sms</v-icon>
+                        <v-icon>email</v-icon>
                     </v-list-tile-action>
 
                     <v-list-tile-content>
-                        <v-list-tile-title>SMS account</v-list-tile-title>
+                        <v-list-tile-title>Mailing system settings</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>

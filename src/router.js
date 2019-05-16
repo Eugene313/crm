@@ -4,6 +4,7 @@ import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import notfound from './views/Notfound';
 import Users from "./views/Users";
+import Mailing from "./views/Mailing";
 import store from './store'
 
 
@@ -11,6 +12,8 @@ Vue.use(Router);
 Vue.component('Login', Login);
 Vue.component('notfound', notfound);
 Vue.component('Users', Users);
+Vue.component('Mailing', Mailing);
+
 
 
 const router = new Router({
@@ -43,9 +46,13 @@ const router = new Router({
           name : 'dashboard'
       },
     {
+      path: '/mailing',
+      component : Mailing
+    },
+    {
       path : '/*',
       component : notfound
-    }
+    },
   ]
 });
 

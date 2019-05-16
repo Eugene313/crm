@@ -4,7 +4,9 @@
       <Toolbar></Toolbar>
       <v-content>
         <v-container>
-          <router-view></router-view>
+          <transition name="router-anim"   enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <router-view></router-view>
+          </transition>
         </v-container>
       </v-content>
       <v-footer class="pa-3" app>
@@ -22,8 +24,14 @@
       }
     },
     beforeCreate() {
-      this.$store.commit('jwtDecode')
+      this.$store.commit('jwtDecode');
     }
   }
 </script>
+<style>
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
+.fadeOut {
+  display: none;
+}
+</style>
 

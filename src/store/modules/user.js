@@ -4,7 +4,7 @@ export default {
 
   state : {
     token : localStorage.getItem('access_token') || null,
-    currentUser : null
+    currentUser : {}
   },
   mutations : {
     removeToken (state) {
@@ -25,7 +25,7 @@ export default {
       return state.token;
     },
     getCurrentUser (state) {
-      return state.currentUser.role
+      return state.currentUser
     }
   }
 

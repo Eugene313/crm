@@ -12,12 +12,24 @@ import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 import Toolbar from './components/Toolbar'
+import Mailing from './views/Mailing'
+
 
 Vue.component('Toolbar',Toolbar);
+Vue.component('Mailing',Mailing);
 
-Vue.use(Vuetify);
+
+Vue.use(Vuetify,{
+  theme: {
+    primary: '#F57C00', // #E53935
+    secondary: '#F57C00', // #FFCDD2
+    accent: '#F57C00' // #3F51B5
+  }
+});
 Vue.use(VueAxios, axios);
-Vue.use(VueJWT)
+Vue.use(VueJWT);
+
+
 
 
 

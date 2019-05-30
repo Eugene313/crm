@@ -36,6 +36,7 @@ export default {
             commit('onLoading',false);
             localStorage.setItem('access_token',response.data.token);
             commit('addToken',localStorage.getItem('access_token'));
+            commit('jwtDecode');
             router.push('/dashboard');
           })
           .catch(() => {

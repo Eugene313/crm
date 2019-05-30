@@ -3,8 +3,10 @@ import Router from 'vue-router';
 import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import notfound from './views/Notfound';
-import Users from "./views/Users";
+import Users from "./views/Projects";
 import Mailing from "./views/Mailing";
+import Statistics from "./views/Statistic";
+
 import store from './store'
 
 
@@ -13,6 +15,8 @@ Vue.component('Login', Login);
 Vue.component('notfound', notfound);
 Vue.component('Users', Users);
 Vue.component('Mailing', Mailing);
+Vue.component('Statistics', Statistics);
+
 
 
 
@@ -48,6 +52,10 @@ const router = new Router({
     {
       path: '/mailing',
       component : Mailing
+    },
+    {
+      path: '/statistics',
+      component : Statistics
     },
     {
       path : '/*',

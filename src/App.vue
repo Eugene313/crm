@@ -23,8 +23,8 @@
         return this.$store.state.toolbar.theme;
       }
     },
-    beforeCreate() {
-      this.$store.commit('jwtDecode');
+    created(){
+      this.$store.commit('jwtDecode')
     }
   }
 </script>

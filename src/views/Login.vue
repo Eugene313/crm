@@ -2,7 +2,7 @@
   <div>
     <v-container fluid fill-height id="login">
       <v-layout align-center justify-center>
-        <v-flex xs12 sm3 md3 lg3 xl3>
+        <v-flex xs12 sm12 md6 lg4 xl3>
           <v-card class="elevation-12">
             <v-toolbar>
               <v-avatar

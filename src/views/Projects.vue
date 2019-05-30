@@ -4,6 +4,7 @@
       <v-toolbar-title>PROJECTS</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn color="primary" dark @click="">
+        <v-icon class="mr-2">add</v-icon>
         add new project
       </v-btn>
     </v-toolbar>
@@ -18,10 +19,10 @@
         <td class="text-xs-left">{{ props.item.projectDescription }}</td>
         <td class="text-xs-left">{{ props.item.projectLanguage }}</td>
         <td class="text-xs-left">{{ props.item.projectActive }}</td>
-        <td class="text-xs-left"><v-btn dark color="#256fab">Statistics</v-btn></td>
-        <td class="text-xs-left"><v-btn dark color="#256fab">Search</v-btn></td>
-        <td class="text-xs-left"><v-btn dark color="#256fab">Duplicate</v-btn></td>
-        <td class="text-xs-left"><v-btn dark color="#256fab">Registration</v-btn></td>
+        <td class="text-xs-left"><v-btn flat to="/statistics"><v-icon>schedule</v-icon></v-btn></td>
+        <td class="text-xs-left"><v-btn flat to="/Search"><v-icon>search</v-icon></v-btn></td>
+        <td class="text-xs-left"><v-btn flat to="/Duplicate"><v-icon>supervisor_account</v-icon></v-btn></td>
+        <td class="text-xs-left"><v-btn flat to="/Registration"><v-icon>note_add</v-icon></v-btn></td>
       </template>
     </v-data-table>
   </div>
@@ -56,10 +57,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  td {
-    width: 200px;
-    height: 50px;
-  }
-</style>

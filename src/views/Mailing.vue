@@ -6,9 +6,9 @@
 
 
 
-      <v-dialog v-model="dialog" max-width="500px" persistent="true">
+      <v-dialog v-model="dialog" max-width="500px" :persistent="true">
         <template v-slot:activator="{ on }">
-          <v-btn color="primary" dark class="mb-2" v-on="on">New Item</v-btn>
+          <v-btn color="primary" dark class="mb-2" v-on="on"><v-icon class="mr-2">add</v-icon>New Item</v-btn>
         </template>
         <v-card>
           <v-card-title>
@@ -64,18 +64,16 @@
         <td class="text-xs-left">{{ props.item.login }}</td>
         <td class="text-xs-left">{{ props.item.password }}</td>
         <td class="text-xs-left">{{ props.item.subscriberGroup }}</td>
-        <td class=" layout px-0 align-center">
+        <td class=" layout px-0 align-center ml-4">
           <v-icon
                   small
-                  class="mr-2"
                   @click="editItem(props.item)"
           >
             edit
           </v-icon>
           <v-icon
                   small
-                  @click="deleteItem(props.item)"
-          >
+                  @click="deleteItem(props.item)">
             delete
           </v-icon>
         </td>
@@ -106,7 +104,8 @@
         { text: 'Api Url', value: 'fat',sortable: false },
         { text: 'Api login', value: 'carbs',sortable: false },
         { text: 'Api pass', value: 'protein',sortable: false },
-        { text: 'Group', value: 'name', sortable: false }
+        { text: 'Group', value: 'name', sortable: false },
+        { text: 'Edit/Delete', value: 'name', sortable: false }
       ],
       projects: [],
       editedItem: {
@@ -160,11 +159,8 @@
           Authorization: localStorage.getItem('access_token'),
         }
       })
-        .then(response => {this.projects = response.data.data ; console.log(this.projects)})
+        .then(response => {this.projects = response.data.data})
         .catch(()=>{})
     }
   }
 </script>
-<style>
-
-</style>

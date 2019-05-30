@@ -1,13 +1,21 @@
 <template>
-  
+  <div id="chart">
+    <div class="small mx-auto">
+
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: "chart"
-  }
+export  default {
+
+}
+
+
 </script>
 
-<style scoped>
-
+<style>
+  .small {
+    max-width: 1730px;
+  }
 </style>

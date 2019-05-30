@@ -25,7 +25,7 @@ export default {
       return state.token;
     },
     getCurrentUser (state) {
-      return state.currentUser
+      return state.currentUser.role
     }
   }
 

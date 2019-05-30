@@ -11,32 +11,55 @@ import VueJWT from 'vuejs-jwt'
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-import Toolbar from './components/Toolbar'
-import Mailing from './views/Mailing'
+
+import Toolbar from './components/Toolbar';
+import Mailing from './views/Mailing';
+import chart from './components/chart'
+
+import VueChartJs from 'vue-chartjs'
 
 
 Vue.component('Toolbar',Toolbar);
 Vue.component('Mailing',Mailing);
+Vue.component('chart',chart);
+
+Vue.component('Radar', {
+  extends: VueChartJs.Doughnut,
+  mounted () {
+    this.renderChart({
+      labels: ['Blue', 'February', 'March'],
+      datasets: [
+        {
+          label: 'Data One',
+          backgroundColor: '#fb6363',
+          data: [40, 39, 10,]
+        },
+      ]
+    })
+  }
+
+});
 
 
 Vue.use(Vuetify,{
   theme: {
-    primary: '#F57C00', // #E53935
-    secondary: '#F57C00', // #FFCDD2
-    accent: '#F57C00' // #3F51B5
+    primary: '#ffb300',
+    secondary: '#ffb300',
+    accent: '#ffb300'
   }
 });
+
 Vue.use(VueAxios, axios);
 Vue.use(VueJWT);
-
-
-
 
 
 Vue.config.productionTip = false;
 
 new Vue({
+  created () {
+    // this.$store.commit('jwtDecode');
+  },
   router,
   store,
-  render: h => h(App)
-}).$mount('#app');
+  render: h => h(App),
+},).$mount('#app');

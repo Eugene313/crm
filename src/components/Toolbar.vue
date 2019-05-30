@@ -4,7 +4,7 @@
                 app
                 :value="drawer"
                 v-if="token">
-            <v-toolbar>
+            <v-toolbar >
                 <v-list>
                     <v-list-tile>
                         <v-avatar
@@ -17,23 +17,23 @@
                 </v-list>
             </v-toolbar>
             <v-divider></v-divider>
-            <v-list dense class="pt-0 active-class">
-              <v-list-tile class="pb-3 pt-3 role">
+            <v-list dense class="pt-0 active-class" id="menu">
+              <v-list-tile class=" pt-3 role">
                 <v-list-tile-action>
-                  <v-icon >verified_user</v-icon>
+                  <v-icon>verified_user</v-icon>
                 </v-list-tile-action>
 
                 <v-list-tile-content>
-                  <v-list-tile-title>{{ currentUser.role }}</v-list-tile-title>
+                  <v-list-tile-title>{{ currentUser }}</v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
               <v-list-tile to="/Users">
                     <v-list-tile-action>
-                        <v-icon>supervised_user_circle</v-icon>
+                        <v-icon>star_border</v-icon>
                     </v-list-tile-action>
 
                     <v-list-tile-content>
-                        <v-list-tile-title>Manage Users</v-list-tile-title>
+                        <v-list-tile-title>All projects</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
                 <v-list-tile to="/Search">
@@ -113,7 +113,8 @@
         },
     }
 </script>
-<style lang="sass" scoped>
-  .role
-    background: #6b6b6b6b
+<style>
+  .v-list__tile--active {
+    background: #b1b1b130;
+  }
 </style>
